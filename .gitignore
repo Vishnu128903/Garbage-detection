@@ -1,0 +1,5 @@
+Dataset.zip
+*.pt
+__pycache__/
+venv/
+.env
