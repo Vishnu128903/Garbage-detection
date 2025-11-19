@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Processed Image Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 10px;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        img {
+            width: 500px;
+            height: auto;
+            border: 2px solid #ddd;
+            margin-top: 10px;
+        }
+        .message {
+            margin-top: 10px;
+            font-size: 1.2em;
+            color: #555;
+        }
+        .back-button {
+            display: inline-block;
+            margin-top: 10px;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+        }
+        .back-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Image Processing Complete!</h1>
+
+    <h2>Processed Images in Folder: {{ folder }}</h2>
+    <p>Processing Time: {{ processing_time }} seconds</p>
+    <h2>Processed Images</h2>
+    {% for result in results %}
+        <p>File: {{ result.filename }} - Processing Time: {{ result.processing_time }}s</p>
+        <img src="{{ url_for('static', filename='results/' + result.filename) }}" width="300">
+    {% endfor %}
+    <div class="message">
+        <p>You can now view or download the processed image.</p>
+    </div>
+    <a href="/" class="back-button">Back to Upload</a>
+</body>
+</html>
