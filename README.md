@@ -31,6 +31,6 @@ A machine learning-based web application that detects garbage/waste in uploaded 
 - Model: YOLOv8  
 - Frontend: HTML, CSS  
 - Libraries: OpenCV, Ultralytics YOLO
-- Environment: Python 3.x  
+- Environment: Python
 
 
